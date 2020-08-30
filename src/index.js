@@ -7,8 +7,12 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import results from "./store/reducers/results";
 import counter from "./store/reducers/counter";
+const mainReducer = combineReducers({
+  counterReducer: counter,
+  resultsReducer: results,
+});
 
-const reduxstore = createStore(reducer);
+const reduxstore = createStore(mainReducer);
 
 ReactDOM.render(
   <Provider store={reduxstore}>

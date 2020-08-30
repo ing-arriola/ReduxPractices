@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
     case actions.STORE:
       return {
         ...state,
-        result: state.result.concat({ id: new Date(), value: state.counter }),
+        result: state.result.concat({ id: new Date(), value: action.counter }),
       };
     case actions.DELETE:
       //One way to delete an element from an array without mutation
