@@ -1,3 +1,4 @@
+import * as actions from "./action";
 const initialState = {
   counter: 0,
   result: [],
@@ -5,32 +6,32 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "INCREMENT":
+    case actions.INCREMENT:
       return {
         ...state,
         counter: state.counter + 1,
       };
-    case "ADD":
+    case actions.ADD:
       return {
         ...state,
         counter: state.counter + action.value,
       };
-    case "DECREMENT":
+    case actions.DECREMENT:
       return {
         ...state,
         counter: state.counter - 1,
       };
-    case "SUBSTRACT":
+    case actions.SUBSTRACT:
       return {
         ...state,
         counter: state.counter - action.value,
       };
-    case "STORE":
+    case actions.STORE:
       return {
         ...state,
         result: state.result.concat({ id: new Date(), value: state.counter }),
       };
-    case "DELETE":
+    case actions.DELETE:
       //One way to delete an element from an array without mutation
       //let newArray=[...state.result]
       //newArray.splice(elementToBeDeleted,1)
